@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 50px;
+        } 
+      .container{
+        height: 350px;
+        width: 200px;
+        border: 3px solid black;
+        border-radius: 10px;
+        
+      }
+      .textbox{
+        height: 20px;
+        width: 150px;
+        margin: 30px 35px 6px 20px;
+        text-align: center;
+        border-radius: 2px;
+        border-color: beige;
+      }
+      .btn-container{
+        display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    grid-template-rows: repeat(2, auto); 
+        
+      }
+      #mod{
+       margin:10px 75px;
+  
+      }
+      .btn{
+        height: 30px;
+        width: 50px;
+        font-size: 20px;
+        font-weight: bold;
+        margin: 20px 35px 10px 20px;
+        background-color: antiquewhite;
+        border-radius: 2px;
+        text-align: center;
+      }
+      #reset{
+        width: 180px;
+        height: 30px;
+        background-color: rgb(121, 207, 207);
+        margin: 10px;
+        border-radius: 10px;
+      }
+      #result{
+        height: 35px;
+        width: 70px;
+        margin-left: 60px;
+        border-bottom: none;
+        text-align: center;
+        border-color:lightslategrey;
+        border-radius: 4px;
+      }
+    </style>
+</head>
+<body>
+    <input type="text" placeholder="Result" id="result" readonly>
+    <div class="container">
+       <input type="number" placeholder="Number1" id="firstNum" class="textbox">
+       <input type="number" placeholder="Number2" id="secondNum" class="textbox">
+       <div class="btn-container">
+        <button id="add" class="btn" onclick=addNums()>+</button>
+        <button id="sub" class="btn" onclick=subNums()>-</button>
+        <button id="mul" class="btn" onclick=mulNums()>*</button>
+        <button id="divide" class="btn" onclick=divNums()>/</button>
+        </div>
+        <button id="mod" class="btn" onclick=modNums()>%</button>
+        <button id="reset" onclick=reset()>Reset</button>
+    </div>
+    <script>
+        function addNums(){
+            const number1 = parseFloat(document.getElementById("firstNum").value);
+            const number2 = parseFloat(document.getElementById("secondNum").value);
+            const result = number1 + number2;
+            document.getElementById('result').value = result;
+
+        }
+        function subNums(){
+            const number1 = parseFloat(document.getElementById("firstNum").value);
+            const number2 = parseFloat(document.getElementById("secondNum").value);
+            const result = number1 - number2;
+            document.getElementById('result').value = result;
+
+        }
+        function mulNums(){
+            const number1 = parseFloat(document.getElementById("firstNum").value);
+            const number2 = parseFloat(document.getElementById("secondNum").value);
+            const result = number1 * number2;
+            document.getElementById('result').value = result;
+
+        }
+        function divNums(){
+            const number1 = parseFloat(document.getElementById("firstNum").value);
+            const number2 = parseFloat(document.getElementById("secondNum").value);
+            const result = number1 / number2;
+            document.getElementById('result').value = result;
+
+        }
+        function modNums(){
+            const number1 = parseFloat(document.getElementById("firstNum").value);
+            const number2 = parseFloat(document.getElementById("secondNum").value);
+            const result =number1 % number2;
+            document.getElementById('result').value = result;
+
+        }
+    function reset() {
+    document.getElementById('firstNum').value = '';
+    document.getElementById('secondNum').value = '';
+    document.getElementById('result').value = '';
+    
+   
+}
+    </script>
+</body>
+</html>
